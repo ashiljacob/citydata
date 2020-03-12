@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>weather</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+	<nav class="navbar navbar-light bg-success">
+	  <a href="#" class="pull-left navbar-brand"><img src="https://cdn3.iconfinder.com/data/icons/weather-609/64/weather_rain_cloud-128.png"></a> 
+
+
+	  	
+
+
+
+	</nav>
+          <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar navbar  bg-dark">
+	          <ul class="nav nav-pills flex-column">
+	      
+	            <li class="nav-item">
+	              <a class="nav-link" href="/japan/">japan</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="/india/">india</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="/germany/">germany</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="/sweden/">sweden</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="/norway/">norway</a>
+	            </li>
+	          </ul>
+	         </nav>
+	    
+
+	    {% block content%}
+	    {% endblock content%}
+	    
+</body>
+</html>
