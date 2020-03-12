@@ -4,10 +4,10 @@ from . import views
 
 urlpatterns = [
 	path('',views.home),
-	path("japan/",views.japan),
+	path("uae/",views.uae),
     path("india/",views.india),
     path("germany/",views.germany),
-    path("swden/",views.sweden),
-    path("norway/",views.norway),
+    path("sweden/",views.sweden),
+    path("austria/",views.austria),
 
 ]

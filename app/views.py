@@ -4,33 +4,36 @@ import requests
 def home(request):
 	return render(request,'index.html')
 
-def japan(request):
+def uae(request):
 
 
-	url = "https://weatherbit-v1-mashape.p.rapidapi.com/current"
-
-	querystring = {"lang":"en","lon":"76.267303","lat":"9.931233"}
-
-	headers = {
-	    'x-rapidapi-host': "weatherbit-v1-mashape.p.rapidapi.com",
-	    'x-rapidapi-key': "8b95dc98dfmshe4830a2f6d62476p1e579ejsn4cc940b3bd17"
-	    }
-
-	response = requests.request("GET", url, headers=headers, params=querystring)
 	
-	print(response)
-	
-	return render(request,'data.html')
+	cities=['Umm al Qaywayn','Ras al-Khaimah','Khawr Fakkān',
+		'Dubai','Dibba Al-Fujairah','Dibba Al-Hisn','Sharjah','Ar Ruways','Al Fujayrah',
+		'Al Ain','Ajman','Adh Dhayd','Abu Dhabi']
+	return render(request,'data.html',{'cities':cities})
 
 def india(request):
-	pass
-	
+	cities = ['Mumbai','Bengaluru','New Delhi','Hyderabad','Chennai','Kochi','Thiruvanathapuram','Ahmedabad',
+			'Pune','Bhopal','Lucknow','Gurugram','Kolkata','Kozhikode','Mysuru','Mangalapuram','Coimbatore',
+			'Surat','Vadodara','Vizag','Madgaon']
+	return render(request,'data.html',{'cities':cities})
 def germany(request):
-	pass
-	
+	cities = ['Berlin','Munich','Dusseldorf','Honover','Bavaria','Hamburg','Cologne','Frankfurt']
+	return render(request,'data.html',{'cities':cities})
+
 def sweden(request):
-	pass
+	cities=['Alingsås','Åmål','Ängelholm','Arboga','Arvika','Askersund','Avesta','Boden','Bollnäs','Borgholm',
+			'Borlänge','Borås','Djursholm','Eksjö','Enköping','Eskilstuna','Eslöv','Fagersta','Falkenberg',
+			'Falköping','Falsterbo','Falun','Filipstad','Flen','Gothenburg']
+	return render(request,'data.html',{'cities':cities})
+
 	
-def norway(request):
-	pass
+def austria(request):
+	cities = ['Wolfsberg','Wiener Neustadt','Vienna','Wels','Weinzierl bei Krems','Villach','Traun','Traiskirchen'
+			,'Ternitz','Steyr','Spittal an der Drau','Schwechat','Sankt Pölten','Salzburg','Saalfelden am Steinernen Meer','Mödling','Lustenau','Linz','Leonding','Leoben','Kufstein','Krems an der Donau','Klosterneuburg'
+			,'Klagenfurt am Wörthersee','Kapfenberg','Innsbruck','Hallein','Graz','Feldkirch','Dornbirn','Bregenz','Braunau am Inn'
+			,'Baden','Amstetten','Ansfelden']
+	return render(request,'data.html',{'cities':cities})
+
 	
