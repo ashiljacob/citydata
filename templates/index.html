@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>weather</title>
-
+	
+	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 </head>
@@ -14,32 +15,44 @@
 	  	
 
 
+<div class="container">
+	<div class="row">
+		<div class="col">
+			</nav>
+		          <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar navbar  bg-dark">
+			          <ul class="nav nav-pills flex-column">
+			      
+			            <li class="nav-item">
+			              <a class="nav-link" href="/uae/">United Arab Emirates</a>
+			            </li>
+			            <li class="nav-item">
+			              <a class="nav-link" href="/india/">india</a>
+			            </li>
+			            <li class="nav-item">
+			              <a class="nav-link" href="/germany/">germany</a>
+			            </li>
+			            <li class="nav-item">
+			              <a class="nav-link" href="/sweden/">sweden</a>
+			            </li>
+			            <li class="nav-item">
+			              <a class="nav-link" href="/austria/">Austria</a>
+			            </li>
+			          </ul>
+			        	
+			         </nav>
 
-	</nav>
-          <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar navbar  bg-dark">
-	          <ul class="nav nav-pills flex-column">
-	      
-	            <li class="nav-item">
-	              <a class="nav-link" href="/uae/">United Arab Emirates</a>
-	            </li>
-	            <li class="nav-item">
-	              <a class="nav-link" href="/india/">india</a>
-	            </li>
-	            <li class="nav-item">
-	              <a class="nav-link" href="/germany/">germany</a>
-	            </li>
-	            <li class="nav-item">
-	              <a class="nav-link" href="/sweden/">sweden</a>
-	            </li>
-	            <li class="nav-item">
-	              <a class="nav-link" href="/austria/">norway</a>
-	            </li>
-	          </ul>
-	         </nav>
+	    	</nav>
+	    </div>
+	    <div class="col">
+          
+            
+				    {% block content%}
+				    {% endblock content%}
+			          
+        	
+	    </div>
 	    
 
-	    {% block content%}
-	    {% endblock content%}
 	    
 </body>
 </html>

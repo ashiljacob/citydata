@@ -1,17 +1,33 @@
 {% extends 'index.html'%}
 {% block content%}
-	{% for c in cities%}	
-		<div>
-
-	        <div class="card" style="width: 18rem;">
-				  <img src="..." class="card-img-top" alt="...">
-				  <div class="card-body">
-				    <h5 class="card-title">{{c}}</h5>
-				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				    
-			
-				  </div>
-			</div>
-		</div>
-		{% endfor %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-4 is-4">
+                	{% for weather_data in weather_datas%}
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-left">
+                                <figure class="image is-50x50">
+                                    <img src="http://openweathermap.org/img/w/{{weather_data.icon}}.png" alt="Image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <span class="title">{{weather_data.city}}</span>
+                                        <br>
+                                        <span class="subtitle">{{weather_data.temparature}}° C</span>
+                                        <br> {{weather_data.description}}
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock content%}
