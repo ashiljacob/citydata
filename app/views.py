@@ -5,48 +5,17 @@ import requests, json
 # Create your views here.
 def home(request):
 	return render(request,'index.html')
+
+#getting weather data of every city in each country
 def city(c_name):
-
-	# Enter your API key here
-	api_key = "5bbc09fcb97056fa46a2a3b463262878"
-
-	# base_url variable to store url
-	base_url = "http://api.openweathermap.org/data/2.5/weather?"
-
-
-	# complete_url variable to store
-	# complete url address
-	complete_url = base_url + "appid=" + api_key + "&q=" + c_name
-
-	# get method of requests module
-	# return response object
-	response = requests.get(complete_url)
-
-	# json method of response object
-	# convert json format data into
-	# python format data
-	x = response.json()
-
-
-	current_temperature = x["main"]["temp"]
-	c = current_temperature-275
-	temp = round(c,2)
-	desc = x["weather"][0]["description"]
-	return temp,desc
-
-def uae(request):
-
-	cities=['Umm al Qaywayn','Ras al-Khaimah','Khawr Fakkān',
-		'Dubai','Dibba Al-Fujairah','Dibba Al-Hisn','Sharjah','Ar Ruways','Al Fujayrah',
-		'Al Ain','Ajman','Adh Dhayd','Abu Dhabi']
 	
 	url ='http://api.openweathermap.org/data/2.5/weather?appid=5bbc09fcb97056fa46a2a3b463262878&q={}'
 
 	weather_data = []
 
-	for c in cities:
+	for c in c_name:
 		r = requests.get(url.format(c)).json()
-		print(r)
+		#print(r)
 		try:
 			city_weather ={
 				
@@ -58,7 +27,15 @@ def uae(request):
 			weather_data.append(city_weather) 
 		except:
 			print("Not Found")
-	return render(request,'data.html',{'weather_datas':weather_data})
+	return weather_data
+def uae(request):
+
+	cities=['Umm al Qaywayn','Ras al-Khaimah','Khawr Fakkān',
+		'Dubai','Dibba Al-Fujairah','Dibba Al-Hisn','Sharjah','Ar Ruways','Al Fujayrah',
+		'Al Ain','Ajman','Adh Dhayd','Abu Dhabi']
+	
+	
+	return render(request,'data.html',{'weather_datas':city(c for c in cities)})
 	
 
 def india(request):
@@ -67,44 +44,12 @@ def india(request):
 			'Surat','Vadodara','Vizag','Madgaon']
 	url ='http://api.openweathermap.org/data/2.5/weather?appid=5bbc09fcb97056fa46a2a3b463262878&q={}'
 
-	weather_data = []
-
-	for c in cities:
-		r = requests.get(url.format(c)).json()
-		print(r)
-		try:
-			city_weather ={
-				
-							'city': c,
-							'temparature': round(r['main']['temp']-275,2),
-							'description':r['weather'][0]['description'],
-							'icon':r['weather'][0]['icon']
-							}
-			weather_data.append(city_weather) 
-		except:
-			print("Not Found")
-	return render(request,'data.html',{'weather_datas':weather_data})
+	return render(request,'data.html',{'weather_datas':city(c for c in cities)})
 def germany(request):
 	cities = ['Berlin','Munich','Dusseldorf','Honover','Bavaria','Hamburg','Cologne','Frankfurt']
 	url ='http://api.openweathermap.org/data/2.5/weather?appid=5bbc09fcb97056fa46a2a3b463262878&q={}'
 
-	weather_data = []
-
-	for c in cities:
-		r = requests.get(url.format(c)).json()
-		print(r)
-		try:
-			city_weather ={
-				
-							'city': c,
-							'temparature': round(r['main']['temp']-275,2),
-							'description':r['weather'][0]['description'],
-							'icon':r['weather'][0]['icon']
-							}
-			weather_data.append(city_weather) 
-		except:
-			print("Not Found")
-	return render(request,'data.html',{'weather_datas':weather_data})
+	return render(request,'data.html',{'weather_datas':city(c for c in cities)})
 
 def sweden(request):
 	cities=['Alingsås','Åmål','Ängelholm','Arboga','Arvika','Askersund','Avesta','Boden','Bollnäs','Borgholm',
@@ -112,23 +57,7 @@ def sweden(request):
 			'Falköping','Falsterbo','Falun','Filipstad','Flen','Gothenburg']
 	url ='http://api.openweathermap.org/data/2.5/weather?appid=5bbc09fcb97056fa46a2a3b463262878&q={}'
 
-	weather_data = []
-
-	for c in cities:
-		r = requests.get(url.format(c)).json()
-		print(r)
-		try:
-			city_weather ={
-				
-							'city': c,
-							'temparature': round(r['main']['temp']-275,2),
-							'description':r['weather'][0]['description'],
-							'icon':r['weather'][0]['icon']
-							}
-			weather_data.append(city_weather) 
-		except:
-			print("Not Found")
-	return render(request,'data.html',{'weather_datas':weather_data})
+	return render(request,'data.html',{'weather_datas':city(c for c in cities)})
 
 	
 def austria(request):
@@ -138,22 +67,5 @@ def austria(request):
 			,'Baden','Amstetten','Ansfelden']
 	url ='http://api.openweathermap.org/data/2.5/weather?appid=5bbc09fcb97056fa46a2a3b463262878&q={}'
 
-	weather_data = []
-
-	for c in cities:
-		r = requests.get(url.format(c)).json()
-		print(r)
-		try:
-			city_weather ={
-				
-							'city': c,
-							'temparature': round(r['main']['temp']-275,2),
-							'description':r['weather'][0]['description'],
-							'icon':r['weather'][0]['icon']
-							}
-			weather_data.append(city_weather) 
-		except:
-			print("Not Found")
-	return render(request,'data.html',{'weather_datas':weather_data})
-
+	return render(request,'data.html',{'weather_datas':city(c for c in cities)})
 	

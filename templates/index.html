@@ -6,6 +6,23 @@
 	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+
+	<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+
 </head>
 <body>
 	<nav class="navbar navbar-light bg-success">
@@ -13,11 +30,8 @@
 
 
 	  	
+					
 
-
-<div class="container">
-	<div class="row">
-		<div class="col">
 			</nav>
 		          <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar navbar  bg-dark">
 			          <ul class="nav nav-pills flex-column">
@@ -38,19 +52,23 @@
 			              <a class="nav-link" href="/austria/">Austria</a>
 			            </li>
 			          </ul>
+
+
 			        	
 			         </nav>
-
+			         
 	    	</nav>
-	    </div>
-	    <div class="col">
+
+	    	<div class="grid-container">
           
-            
-				    {% block content%}
-				    {% endblock content%}
-			          
+	            
+					    {% block content%}
+					    {% endblock content%}
+				          
         	
-	    </div>
+	    	</div>
+	    
+	    
 	    
 
 	    
